@@ -85,10 +85,9 @@ async function checkPrice(page) {
 };
 
 async function startTracking() {
-    console.log(password)
     const page = await configureBrowser();
 
-    let job = new CronJob('*/1 * * * *', function() {
+    let job = new CronJob('*/5 * * * *', function() {
         checkPrice(page);
     }, null, true, null, null, true);
     
